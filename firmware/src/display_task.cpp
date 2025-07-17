@@ -46,15 +46,15 @@ void DisplayTask::run() {
       tft_.fillScreen(TFT_RED);
     } else {
       log("Sprite created!");
-      tft_.fillScreen(TFT_PURPLE);
+      tft_.fillScreen(TFT_DARKGREEN);
     }
     spr_.setTextColor(0xFFFF, TFT_BLACK);
     
     PB_SmartKnobState state;
 
     const int RADIUS = TFT_WIDTH / 2;
-    const uint16_t FILL_COLOR = spr_.color565(90, 18, 151);
-    const uint16_t DOT_COLOR = spr_.color565(80, 100, 200);
+    const uint16_t FILL_COLOR = spr_.color565(29, 100, 5);
+    const uint16_t DOT_COLOR = spr_.color565(0, 255, 135);
 
     spr_.setTextDatum(CC_DATUM);
     spr_.setTextColor(TFT_WHITE);

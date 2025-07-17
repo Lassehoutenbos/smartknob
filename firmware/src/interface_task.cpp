@@ -44,7 +44,7 @@ static PB_SmartKnobConfig configs[] = {
 
     {
         0,
-        0,
+        0.1,
         0,
         0,
         -1, // max position < min position indicates no bounds
@@ -97,8 +97,8 @@ static PB_SmartKnobConfig configs[] = {
         0,
         1,
         60 * PI / 180,
-        1,
-        1,
+        5,
+        5,
         0.55, // Note the snap point is slightly past the midpoint (0.5); compare to normal detents which use a snap point *past* the next value (i.e. > 1)
         "On/off\nStrong detent",
         0,
@@ -107,48 +107,16 @@ static PB_SmartKnobConfig configs[] = {
         157,
     },
     {
+        127,
         0,
+        5,
         0,
+        255,
+        1 * PI / 180,
         4,
-        0,
-        0,
-        60 * PI / 180,
-        0.01,
-        0.6,
-        1.1,
-        "Return-to-center",
-        0,
-        {},
-        0,
-        45,
-    },
-    {
-        127,
-        0,
         5,
-        0,
-        255,
-        1 * PI / 180,
-        0,
-        1,
         1.1,
-        "Fine values\nNo detents",
-        0,
-        {},
-        0,
-        219,
-    },
-    {
-        127,
-        0,
-        5,
-        0,
-        255,
-        1 * PI / 180,
-        1,
-        1,
-        1.1,
-        "Fine values\nWith detents",
+        "Fine values\nWith detents 4",
         0,
         {},
         0,
@@ -161,10 +129,26 @@ static PB_SmartKnobConfig configs[] = {
         0,
         31,
         8.225806452 * PI / 180,
-        2,
+        10,
         1,
-        1.1,
-        "Coarse values\nStrong detents",
+        0.50,
+        "Coarse values\n1.3",
+        0,
+        {},
+        0,
+        200,
+    },
+        {
+        0,
+        0,
+        6,
+        0,
+        31,
+        8.225806452 * PI / 180,
+        10,
+        1,
+        0.7,
+        "Coarse values\n.7",
         0,
         {},
         0,
@@ -194,7 +178,7 @@ static PB_SmartKnobConfig configs[] = {
         31,
         7 * PI / 180,
         2.5,
-        1,
+        2,
         0.7,
         "Magnetic detents",
         4,
@@ -218,6 +202,36 @@ static PB_SmartKnobConfig configs[] = {
         0.4,
         157,
     },
+    {
+        10,
+        0,
+        9,
+        -20,
+        20,
+        100 * PI / 180,
+        4,
+        5,
+        0.55,
+        "Die voor je\nSuper detent",
+        0,
+        {},
+        0.4,
+        157,
+    },
+    // int32_t position;
+    // float sub_position_unit;
+    // uint8_t position_nonce;
+    // int32_t min_position;
+    // int32_t max_position;
+    // float position_width_radians;
+    // float detent_strength_unit;
+    // float endstop_strength_unit;
+    // float snap_point;
+    // char text[51];
+    // pb_size_t detent_positions_count;
+    // int32_t detent_positions[5];
+    // float snap_point_bias;
+    // int8_t led_hue;
 };
 
 InterfaceTask::InterfaceTask(const uint8_t task_core, MotorTask& motor_task, DisplayTask* display_task) : 
